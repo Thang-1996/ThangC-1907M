@@ -64,7 +64,7 @@ namespace ConsoleApp.Lab2
 
         public void addGallery()
         {
-            if (gallery.Count < 2)
+            if (gallery.Count < 2) // <2 anh khong them nua (de test yc 10 ^-^)
             {
                 foreach (Product p in productList)
                 {
