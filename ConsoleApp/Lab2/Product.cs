@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ConsoleApp.Lab2
 {
@@ -84,26 +85,27 @@ namespace ConsoleApp.Lab2
         }
         public void removeGallery()
         {
-            string removegallery;
-            Console.WriteLine("Nhap ten anh muon xoa:");
-            removegallery = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Gallery List:");
+            for(int i=0;i<gallery.Count;i++)
+            {
+                Console.WriteLine("STT:"+(i+1)+"\tImage Name: "+gallery[i]);
+            }
+            int index;
+            Console.WriteLine("Nhap vi tri anh muon xoa");
+            index = Convert.ToInt32(Console.ReadLine());
             for (int i = 0; i < gallery.Count; i++)
             {
-                if (removegallery.Equals(gallery[i]))
+                if (i == index)
                 {
-                    gallery.RemoveAt(i);
+                    gallery.RemoveAt(index-1);
                     Console.WriteLine("Xoa thanh cong");
                     Console.WriteLine("Gallery List:");
                     foreach (String s in gallery)
                     {
-                        Console.WriteLine(s);   
+                        Console.WriteLine(s);
                     }
-                }
-                else
-                {
-                    Console.WriteLine("khong tim thay anh de xoa");
                 }
             }
         }
+        }
     }
-}
