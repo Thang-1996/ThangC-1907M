@@ -12,7 +12,7 @@ namespace ConsoleApp.Lab2
         public int qty;
         public string image;
         public string desc;
-        private List<String> gallery = new List<String>();
+        public List<String> gallery = new List<String>();
         public List<Product> productList = new List<Product>();
 
         public Product()
@@ -34,6 +34,7 @@ namespace ConsoleApp.Lab2
         }
         public void getInfo()
         {
+            Console.WriteLine("Product List:");
             foreach (Product p in productList)
             {    
                 Console.WriteLine("ID:"+p.iD+" Name:"+p.name+" price:"+p.price+" QTY:"+p.qty+" Image:"+p.image+" Desc:"+p.desc);
@@ -45,7 +46,7 @@ namespace ConsoleApp.Lab2
         public void checkStock()
         {
             string name;
-            Console.WriteLine("enter product name to check:");
+            Console.WriteLine("Nhap ten sp muon check:");
             name = Convert.ToString(Console.ReadLine());
             foreach (Product p in productList)
             {
@@ -53,11 +54,11 @@ namespace ConsoleApp.Lab2
                 {
                     if (p.qty > 0)
                     {
-                        Console.WriteLine("Con hang");
+                        Console.WriteLine("SP Con hang");
                     }
                     else
                     {
-                        Console.WriteLine("het hang");
+                        Console.WriteLine("SP Het hang");
                     }
                 }
             }
@@ -65,7 +66,7 @@ namespace ConsoleApp.Lab2
 
         public void addGallery()
         {
-            /*(if (gallery.Count < 2) // test 2 anh*/
+            /*(if (gallery.Count < 2) //*/
             if(gallery.Count <10)
             {
                 foreach (Product p in productList)
@@ -74,14 +75,14 @@ namespace ConsoleApp.Lab2
                 }
                 Console.WriteLine("Them thanh cong vao gallery");
                 Console.WriteLine("Gallery List:");
-                foreach (String s in gallery)
+                for (int i = 0; i < gallery.Count; i++)
                 {
-                    Console.WriteLine(s);   
+                    Console.WriteLine("STT:"+(i+1)+"\tImage Name: "+gallery[i]);
                 }
             }
             else
             {
-                Console.WriteLine("Vuot qua so luong them ");
+                Console.WriteLine("Vuot qua so luong them can xoa bot anh");
             }
         }
         public void removeGallery()
@@ -100,11 +101,6 @@ namespace ConsoleApp.Lab2
                 {
                     gallery.RemoveAt(index-1);
                     Console.WriteLine("Xoa thanh cong");
-                    Console.WriteLine("Gallery List:");
-                    foreach (String s in gallery)
-                    {
-                        Console.WriteLine(s);
-                    }
                 }
             }
         }

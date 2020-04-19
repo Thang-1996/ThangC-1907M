@@ -17,6 +17,8 @@ namespace ConsoleApp.Lab2
                 Console.WriteLine("4: Add gallery");
                 Console.WriteLine("5: Remove gallery");
                 Console.WriteLine("6: Exit");
+                Console.WriteLine();
+                Console.WriteLine("Enter choice:");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
