@@ -37,7 +37,7 @@ namespace ConsoleApp.Lab2
             Console.WriteLine("Product List:");
             foreach (Product p in productList)
             {    
-                Console.WriteLine("ID:"+p.iD+" Name:"+p.name+" price:"+p.price+" QTY:"+p.qty+" Image:"+p.image+" Desc:"+p.desc);
+                Console.WriteLine("ID:"+p.iD+"Name:"+p.name+" price:"+p.price+" QTY:"+p.qty+" Image:"+p.image+" Desc:"+p.desc);
                 Console.WriteLine();
             }
             
