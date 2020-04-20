@@ -43,13 +43,6 @@ namespace ConsoleApp.Assigment3
             {
                 Console.WriteLine("ID:"+p.iD+" | Name:"+p.name+" | price:"+p.price+" | QTY:"+p.qty+" | Image:"+p.image+" | Desc:"+p.desc);
             }
-            double totalCal = 0;
-            foreach (Double d in totals)
-            {
-                totalCal += d;
-            }
-
-            Console.WriteLine("GrandTotal = "+totalCal);
         }
         public new void addProduct(Product product)
         {
@@ -73,35 +66,36 @@ namespace ConsoleApp.Assigment3
 
         public void grandTotalCal()
         {
-            foreach (Product p in products)
-            {
-                if (country == "vietnam")
-                {
-                    if (city == "hanoi" || city == "HCM")
-                    {
-
-                        grandTotal = (p.qty * p.price) + (p.qty * p.price * 0.01);
-                        totals.Add(grandTotal);
-                    }
-                    else
-                    {
-                        grandTotal = (p.qty * p.price) + (p.qty * p.price * 0.02);
-                        totals.Add(grandTotal);
-                    }
-                }
-                else
-                {
-                    grandTotal = (p.qty * p.price) + (p.qty * p.price * 0.05);
-                    totals.Add(grandTotal);
-                }
-            }
-            double totalCal = 0;
-            foreach (Double d in totals)
-            {
-                totalCal += d;
-            }
-
-            Console.WriteLine("GrandTotal = "+totalCal);
+            // foreach (Product p in products)
+            // {
+            //     grandTotal = p.price * p.qty;
+            //     totals.Add(grandTotal);
+            // }
+            // double totalCal = 0;
+            // foreach (Double d in totals)
+            // {
+            //     totalCal += d;
+            // }
+            //
+            // double shipFee;
+            // if (country == "vietnam")
+            // {
+            //     if (city == "hanoi" || city == "HCM")
+            //     {
+            //         shipFee = totalCal * 0.01;
+            //         Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+            //     }
+            //     else
+            //     {
+            //         shipFee = totalCal * 0.02;;
+            //         Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+            //     }
+            // }
+            // else
+            // {
+            //     shipFee = totalCal * 0.05;
+            //     Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+            // }
         }
     }
 }
