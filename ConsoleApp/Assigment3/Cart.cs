@@ -66,36 +66,36 @@ namespace ConsoleApp.Assigment3
 
         public void grandTotalCal()
         {
-            // foreach (Product p in products)
-            // {
-            //     grandTotal = p.price * p.qty;
-            //     totals.Add(grandTotal);
-            // }
-            // double totalCal = 0;
-            // foreach (Double d in totals)
-            // {
-            //     totalCal += d;
-            // }
-            //
-            // double shipFee;
-            // if (country == "vietnam")
-            // {
-            //     if (city == "hanoi" || city == "HCM")
-            //     {
-            //         shipFee = totalCal * 0.01;
-            //         Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
-            //     }
-            //     else
-            //     {
-            //         shipFee = totalCal * 0.02;;
-            //         Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
-            //     }
-            // }
-            // else
-            // {
-            //     shipFee = totalCal * 0.05;
-            //     Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
-            // }
+            foreach (Product p in products)
+            {
+                grandTotal = p.price * p.qty;
+                totals.Add(grandTotal);
+            }
+            double totalCal = 0;
+            foreach (Double d in totals)
+            {
+                totalCal += d;
+            }
+            
+            double shipFee;
+            if (country == "vietnam")
+            {
+                if (city == "hanoi" || city == "HCM")
+                {
+                    shipFee = totalCal * 0.01;
+                    Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+                }
+                else
+                {
+                    shipFee = totalCal * 0.02;;
+                    Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+                }
+            }
+            else
+            {
+                shipFee = totalCal * 0.05;
+                Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+            }
         }
     }
 }

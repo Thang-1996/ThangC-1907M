@@ -44,9 +44,8 @@ namespace ConsoleApp.Assigment3
                     case 3: 
                         cart.grandTotalCal();
                         break;
-                    case 4: 
+                    case 4:
                         cart.showInfo();
-                        cart.grandTotalCal();
                         break;
                     case 5: 
                         Environment.Exit(0);
