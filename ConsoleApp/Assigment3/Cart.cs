@@ -83,12 +83,12 @@ namespace ConsoleApp.Assigment3
                 if (city == "hanoi" || city == "HCM")
                 {
                     shipFee = totalCal * 0.01;
-                    Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+                    Console.WriteLine("GrandTotal = "+(totalCal+shipFee));
                 }
                 else
                 {
                     shipFee = totalCal * 0.02;;
-                    Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
+                    Console.WriteLine("GrandTotal = "+(totalCal+shipFee));
                 }
             }
             else
