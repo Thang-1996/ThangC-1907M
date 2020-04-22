@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp.Lab2
 {
     public class Fashion: Product
     {
-        protected string color;
-        protected string size;
+        private string color;
+        private string size;
 
-        public Fashion(int iD, string name, int price, int qty, string image, string desc, string color, string size) : base(iD, name, price, qty, image, desc)
+        public Fashion(int iD, string name, int price, int qty, string image, string desc, List<string> gallery, string color, string size) : base(iD, name, price, qty, image, desc, gallery)
         {
             this.color = color;
             this.size = size;
         }
-        
+
         public new void checkStock()
         {
             string colorCheck, sizeCheck;
@@ -25,11 +26,10 @@ namespace ConsoleApp.Lab2
                 if (qty > 0)
                 {
                     Console.WriteLine("Con hang");
+                    return;
                 }
-                else
-                {
-                    Console.WriteLine("Het hang");
-                }
+
+                Console.WriteLine("Het hang");
             }
             else
             {

@@ -3,99 +3,61 @@ using System.Collections.Generic;
 using ConsoleApp.Lab2;
 
 namespace ConsoleApp.Assigment3
-
 {
-    public class Cart : Product
+    public class Cart
     {
-        public int id;
-        public string customer;
-        public double grandTotal;
-        public string city;
-        public string country;
-        public List<Product> products = new List<Product>();
-        public List<Double> totals = new List<double>();
+        private int id;
+        private string customer;
+        private double grandTotal;
+        private List<Product> listProduct;
+        private string city;
+        private string country;
 
-        public Cart(int id, string customer, double grandTotal, string city, string country)
+        public Cart(int id, string customer, double grandTotal, List<Product> listProduct, string city, string country)
         {
             this.id = id;
             this.customer = customer;
             this.grandTotal = grandTotal;
+            this.listProduct = listProduct;
             this.city = city;
             this.country = country;
         }
 
-        public Cart(int iD, string name, int price, int qty, string image, string desc, int id, string customer,
-            double grandTotal, string city, string country) : base(iD, name, price, qty, image, desc)
+        public bool AddProduct(Product product)
         {
-            this.id = id;
-            this.customer = customer;
-            this.grandTotal = grandTotal;
-            this.city = city;
-            this.country = country;
+            listProduct.Add(product);
+            Console.WriteLine("them thanh cong");
+            return true;
         }
 
-        public void showInfo()
+        public bool RemoveProduct(Product product)
         {
-            Console.WriteLine("Customer Info:");
-            Console.WriteLine("CustomerID:"+id+"| Customer Name:"+customer+" | City:"+city+" | Country:"+country);
-            Console.WriteLine("Cart");
-            foreach (Product p in products)
-            {
-                Console.WriteLine("ID:"+p.iD+" | Name:"+p.name+" | price:"+p.price+" | QTY:"+p.qty+" | Image:"+p.image+" | Desc:"+p.desc);
-            }
-        }
-        public new void addProduct(Product product)
-        {
-            products.Add(product);
+            return listProduct.Remove(product);
         }
 
-        public void removeProduct()
+        public double FinalTotal()
         {
-            string removeName;
-            Console.WriteLine("Nhap ten san pham muon xoa");
-            removeName = Convert.ToString(Console.ReadLine());
-            for (int i = 0; i < products.Count; i++)
+            double grand = 0;
+            foreach (Product p in listProduct)
             {
-                if (removeName.Equals(products[i].name))
-                {
-                    products.RemoveAt(i);
-                    Console.WriteLine("Xoa thanh cong san pham");
-                }
+                grand += p.price;
             }
+            grand += ShippingFee(grand);
+            this.grandTotal = grand;
+            return grandTotal;
         }
 
-        public void grandTotalCal()
+        public double ShippingFee(double grand)
         {
-            foreach (Product p in products)
+            if (country.Equals("VN") && (city.Equals("HN") || city.Equals("HCM")))
             {
-                grandTotal = p.price * p.qty;
-                totals.Add(grandTotal);
+                return grand * 0.01;
             }
-            double totalCal = 0;
-            foreach (Double d in totals)
+            if (country.Equals("VN"))
             {
-                totalCal += d;
+                return grand * 0.02;
             }
-            
-            double shipFee;
-            if (country == "vietnam")
-            {
-                if (city == "hanoi" || city == "HCM")
-                {
-                    shipFee = totalCal * 0.01;
-                    Console.WriteLine("GrandTotal = "+(totalCal+shipFee));
-                }
-                else
-                {
-                    shipFee = totalCal * 0.02;;
-                    Console.WriteLine("GrandTotal = "+(totalCal+shipFee));
-                }
-            }
-            else
-            {
-                shipFee = totalCal * 0.05;
-                Console.WriteLine("GrandTotal(With Shipping Fee) = "+(totalCal+shipFee));
-            }
+            return grand * 0.05;
         }
     }
 }

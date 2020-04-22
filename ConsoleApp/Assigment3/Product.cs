@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 
-namespace ConsoleApp.Lab2
+namespace ConsoleApp.Assigment3
 {
     public class Product
     {
