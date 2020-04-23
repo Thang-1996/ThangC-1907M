@@ -13,6 +13,12 @@ namespace ConsoleApp.Lab2
             this.color = color;
             this.size = size;
         }
+        // getter setter
+        public string Color
+        {
+            get => color; // ham tra ve gia tri la ham read
+            set => color = value; // ham set gia tri ham write
+        }
 
         public new void checkStock()
         {

@@ -7,7 +7,13 @@
       <e p="ConsoleApp" t="IncludeRecursive">
         <e p="Assigment3" t="Include">
           <e p="Cart.cs" t="Include" />
-          <e p="Program.cs" t="Include" />
+          <e p="Product.cs" t="Include" />
+        </e>
+        <e p="Assigment4" t="Include">
+          <e p="Customer.cs" t="Include" />
+          <e p="CustomerNN.cs" t="Include" />
+          <e p="CustomerVn.cs" t="Include" />
+          <e p="Programs.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="ConsoleApp.csproj" t="IncludeRecursive" />
