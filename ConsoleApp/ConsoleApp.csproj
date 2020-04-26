@@ -12,10 +12,13 @@
       <Compile Remove="Sesson3\Program.cs" />
       <None Include="Sesson3\Program.cs" />
       <Compile Remove="Lab2\Program2.cs" />
-      <None Include="Lab2\Program2.cs" />
       <Compile Remove="Assigment3\Program.cs" />
+      <Compile Remove="Session6\Programs.cs" />
+      <None Include="Session6\Programs.cs" />
       <Compile Remove="Lab2\Program.cs" />
       <None Include="Lab2\Program.cs" />
+      <Compile Remove="Assigment4\Programs.cs" />
+      <None Include="Assigment4\Programs.cs" />
     </ItemGroup>
 
 </Project>

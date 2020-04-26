@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp.Assigment4
 {
@@ -6,29 +7,43 @@ namespace ConsoleApp.Assigment4
     {
         public static void Main(string[] args)
         {
-            CustomerNN c1 = new CustomerNN(1,20,"Join","11/01/2020",3000,0,"My",new List<CustomerNN>());
-            CustomerNN c2 = new CustomerNN(2,30,"Join1","11/01/2020",4000,0,"Anh",new List<CustomerNN>());
-            CustomerNN c3 = new CustomerNN(3,40,"Join2","11/01/2020",5000,0,"Singapore",new List<CustomerNN>());
-            CustomerNN c4 = new CustomerNN(4,50,"Join3","11/01/2020",6000,0,"Malaysia",new List<CustomerNN>());
-            c1.addCustomer(c1);
-            c1.addCustomer(c2);
-            c1.addCustomer(c3);
-            c1.addCustomer(c4);
-            c1.showList();
-            c1.Total();
-            c1.TrungBinh();
-            c1.TongSL();
-            // CustomerVN v1 = new CustomerVN(1,30,"abc","11/04/2020",1000,0,"SH",150,new List<CustomerVN>());
-            // CustomerVN v2 = new CustomerVN(2,20,"abc1","11/04/2020",1000,0,"SH",100,new List<CustomerVN>());
-            // CustomerVN v3 = new CustomerVN(3,60,"abc2","11/04/2020",1000,0,"SH",130,new List<CustomerVN>());
-            // CustomerVN v4 = new CustomerVN(4,70,"abc3","11/04/2020",1000,0,"SH",50,new List<CustomerVN>());
-            // v1.addCustomer(v1);
-            // v1.addCustomer(v2);
-            // v1.addCustomer(v3);
-            // v1.addCustomer(v4);
-            // v1.showList();
-            // v1.Total();
-            // v1.TongSL();
+            List<CustomerNN> listNN = new List<CustomerNN>();
+            List<CustomerVN> listVN = new List<CustomerVN>();
+            listNN.Add(new CustomerNN(1,"Alex","02/2019",78,"US"));
+           listNN.Add(new CustomerNN(2,"Alex1","01/2019",78,"US"));
+           listVN.Add(new CustomerVN(3,"Nguyen A","02/2019",155,"Sinh hoat"));
+           listVN.Add(new CustomerVN(4,"Nguyen B","01/2019",155,"Sinh hoat"));
+           int totalVN = 0;
+           foreach (CustomerVN  c in listVN)
+           {
+               totalVN += c.Total();
+           }
+
+           int totalNN = 0;
+           foreach (CustomerNN c in listNN)
+           {
+               totalNN += c.Total();
+           }
+
+           Console.WriteLine("Tong tien VN: "+totalVN);
+           Console.WriteLine("Tong tien NN: "+totalVN);
+           Console.WriteLine("Tong Tien Trung binh:");
+           Console.WriteLine("Tong Tien Trung binh VN:"+((float)totalVN/listVN.Count));
+           Console.WriteLine("Tong Tien Trung binh NN:"+((float)totalVN/listVN.Count));
+           foreach (CustomerVN c in listVN)
+           {
+               if (c.BillDate.Equals("01/2019"))
+               {
+                   c.showBill();
+               }
+           }
+           foreach (CustomerNN c in listNN)
+           {
+               if (c.BillDate.Equals("01/2019"))
+               {
+                   c.showBill();
+               }
+           }
         }
     }
 }

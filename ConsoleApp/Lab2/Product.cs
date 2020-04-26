@@ -28,6 +28,55 @@ namespace ConsoleApp.Lab2
             this.gallery = gallery;
         }
 
+        public int ID
+        {
+            get => iD;
+            set => iD = value;
+        }
+
+        public string Name
+        {
+            get => name;
+            set => name = value;
+        }
+
+        public int Price
+        {
+            get => price;
+            set => price = value;
+        }
+
+        public int Qty
+        {
+            get => qty;
+            set => qty = value;
+        }
+
+        public string Image
+        {
+            get => image;
+            set => image = value;
+        }
+
+        public string Desc
+        {
+            get => desc;
+            set => desc = value;
+        }
+
+        public List<string> Gallery
+        {
+            get => gallery;
+            // set => gallery = value;
+        }
+
+        public string this[int index]
+        {
+            get { return gallery[index]; }
+            set { gallery[index] = value; }
+
+        }
+
         public void getInfo()
         {
             Console.WriteLine("ID:"+iD+"Name:"+name+" price:"+price+" QTY:"+qty+" Image:"+image+" Desc:"+desc);
@@ -44,18 +93,14 @@ namespace ConsoleApp.Lab2
             Console.WriteLine("Het hang");
         }
 
-        public void addGallery()
+        public void addGallery(string newimage)
         {
             if (gallery.Count >= 10)
             {
                 Console.WriteLine("khong the them anh");
                 return;
             }
-
-            string imageadd;
-            Console.WriteLine("Nhap anh muon them: ");
-            imageadd = Console.ReadLine();
-            gallery.Add(imageadd);
+            gallery.Add(newimage);
         }
         public void removeGallery()
         {
