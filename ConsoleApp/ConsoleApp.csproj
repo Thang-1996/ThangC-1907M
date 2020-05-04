@@ -19,6 +19,10 @@
       <None Include="Lab2\Program.cs" />
       <Compile Remove="Assigment4\Programs.cs" />
       <None Include="Assigment4\Programs.cs" />
+      <Compile Remove="Assigment5\Program.cs" />
+      <None Include="Assigment5\Program.cs" />
+      <Compile Remove="Session8\Program.cs" />
+      <None Include="Session8\Program.cs" />
     </ItemGroup>
 
 </Project>
