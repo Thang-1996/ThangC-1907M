@@ -13,8 +13,13 @@ namespace ConsoleApp.Lab2
         public string image;
         public string desc;
         public List<String> gallery;
+        private event CartAlert ChangeQTY;
         public Product()
         {
+            if (ChangeQTY == null)
+            {
+                ChangeQTY += AlertMessage;
+            }
         }
 
         public Product(int iD, string name, int price, int qty, string image, string desc, List<string> gallery)
@@ -49,7 +54,14 @@ namespace ConsoleApp.Lab2
         public int Qty
         {
             get => qty;
-            set => qty = value;
+            set
+            {
+                if (qty != 0)
+                {
+                    ChangeQTY("Da thay doi sl san pham");
+                }
+                qty = value;
+            }
         }
 
         public string Image
@@ -114,6 +126,10 @@ namespace ConsoleApp.Lab2
             int stt;
             stt = Convert.ToInt32(Console.ReadLine());
             gallery.RemoveAt(stt);
+        }
+        public static void AlertMessage(string msg)
+        {
+            Console.WriteLine(msg);
         }
         }
     }

@@ -4,6 +4,7 @@ using ConsoleApp.Lab2;
 
 namespace ConsoleApp.Lab2
 {
+    public delegate void CartAlert(string msg);
     public class Cart
     {
         private int id;
@@ -12,6 +13,7 @@ namespace ConsoleApp.Lab2
         private List<Product> listProduct;
         private string city;
         private string country;
+        private event CartAlert AddToCart;
 
         public Cart(int id, string customer, double grandTotal, List<Product> listProduct, string city, string country)
         {
@@ -21,12 +23,17 @@ namespace ConsoleApp.Lab2
             this.listProduct = listProduct;
             this.city = city;
             this.country = country;
+            if (AddToCart == null)
+            {
+                AddToCart += AlertMessage;
+            }
         }
 
         public bool AddProduct(Product product)
         {
             listProduct.Add(product);
             Console.WriteLine("them thanh cong");
+            AlertMessage("Da them san pham"+product.name);
             return true;
         }
 
@@ -61,6 +68,10 @@ namespace ConsoleApp.Lab2
             }
 
             return grand * 0.05;
+        }
+        public static void AlertMessage(string msg)
+        {
+            Console.WriteLine(msg);
         }
     }
 }

@@ -37,6 +37,9 @@
           <e p="Calculate.cs" t="Include" />
           <e p="Program.cs" t="Include" />
         </e>
+        <e p="Lab8" t="Include">
+          <e p="Programs.cs" t="Include" />
+        </e>
         <e p="LAB_2_3" t="Include">
           <e p="Product.cs" t="Include" />
         </e>
@@ -50,6 +53,10 @@
         <e p="Session6" t="Include">
           <e p="Programs.cs" t="Include" />
         </e>
+        <e p="Session7" t="Include">
+          <e p="EventDemo.cs" t="Include" />
+          <e p="Programs.cs" t="Include" />
+        </e>
         <e p="Session8" t="Include">
           <e p="Calculator.cs" t="Include" />
           <e p="Program.cs" t="Include" />
@@ -61,6 +68,9 @@
           <e p="Man.cs" t="Include" />
           <e p="Program.cs" t="Include" />
           <e p="Woman.cs" t="Include" />
+        </e>
+        <e p="Sesson8" t="Include">
+          <e p="Session8.cs" t="Include" />
         </e>
       </e>
       <e p="ConsoleApp.sln" t="IncludeFlat" />

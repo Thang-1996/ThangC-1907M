@@ -28,6 +28,7 @@ namespace ConsoleApp.Lab6
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return 0;
             }
             

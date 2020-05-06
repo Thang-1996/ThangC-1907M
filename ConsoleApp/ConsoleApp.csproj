@@ -15,14 +15,20 @@
       <Compile Remove="Assigment3\Program.cs" />
       <Compile Remove="Session6\Programs.cs" />
       <None Include="Session6\Programs.cs" />
-      <Compile Remove="Lab2\Program.cs" />
-      <None Include="Lab2\Program.cs" />
       <Compile Remove="Assigment4\Programs.cs" />
       <None Include="Assigment4\Programs.cs" />
       <Compile Remove="Assigment5\Program.cs" />
       <None Include="Assigment5\Program.cs" />
       <Compile Remove="Session8\Program.cs" />
       <None Include="Session8\Program.cs" />
+      <Compile Remove="Lab6\Program.cs" />
+      <None Include="Lab6\Program.cs" />
+      <Compile Remove="Session7\Programs.cs" />
+      <None Include="Session7\Programs.cs" />
+      <Compile Remove="Lab2\Program.cs" />
+      <None Include="Lab2\Program.cs" />
+      <Compile Remove="Sesson8\Session8.cs" />
+      <None Include="Sesson8\Session8.cs" />
     </ItemGroup>
 
 </Project>
