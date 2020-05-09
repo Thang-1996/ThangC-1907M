@@ -29,6 +29,12 @@
       <None Include="Lab2\Program.cs" />
       <Compile Remove="Sesson8\Session8.cs" />
       <None Include="Sesson8\Session8.cs" />
+      <Compile Remove="Lab8\Programs.cs" />
+      <None Include="Lab8\Programs.cs" />
+      <Compile Remove="Assigment6\Programs.cs" />
+      <None Include="Assigment6\Programs.cs" />
+      <Compile Remove="Sesson8_2\Sesson8_2.cs" />
+      <None Include="Sesson8_2\Sesson8_2.cs" />
     </ItemGroup>
 
 </Project>

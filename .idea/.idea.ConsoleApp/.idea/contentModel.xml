@@ -21,6 +21,9 @@
           <e p="Program.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
+        <e p="Assigment6" t="Include">
+          <e p="Programs.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="ConsoleApp.csproj" t="IncludeRecursive" />
         <e p="Lab1" t="Include">
@@ -71,6 +74,14 @@
         </e>
         <e p="Sesson8" t="Include">
           <e p="Session8.cs" t="Include" />
+        </e>
+        <e p="Sesson8_2" t="Include">
+          <e p="NumberCounter.cs" t="Include" />
+          <e p="Sesson8_2.cs" t="Include" />
+        </e>
+        <e p="StudentManager" t="Include">
+          <e p="Programs.cs" t="Include" />
+          <e p="Student.cs" t="Include" />
         </e>
       </e>
       <e p="ConsoleApp.sln" t="IncludeFlat" />
