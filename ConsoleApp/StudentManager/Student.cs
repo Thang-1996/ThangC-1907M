@@ -26,7 +26,6 @@ namespace ConsoleApp.StudentManager
             this.gpa = gpa;
         }
 
-
         public int Id
         {
             get => id;
@@ -75,7 +74,6 @@ namespace ConsoleApp.StudentManager
                     Console.WriteLine("Cap nhat student thanh cong!");
                     return;
                 }
-                Console.WriteLine("Khong tim thay student");
             }
         }
 
@@ -89,8 +87,6 @@ namespace ConsoleApp.StudentManager
                     Console.WriteLine("Xoa thanh cong student");
                     return;
                 }
-
-                Console.WriteLine("Khong tim thay student");
             }
         }
         
@@ -101,6 +97,33 @@ namespace ConsoleApp.StudentManager
             {
                 Console.WriteLine("ID: "+s.Id+"\tName"+s.Name+"\tAge"+s.Age+"\tAddress: "+s.Address+"\tGPA:"+s.Gpa);
             }
+        }
+
+        public void sortByName()
+        {
+            studentList.Sort(delegate(Student student, Student student1)
+            { 
+                int compareName = student.Name.CompareTo(student1.Name);
+                if (compareName == 0)
+                {
+                    return student.Id.CompareTo(student1.Id);
+                }
+
+                return compareName;
+            });
+        }
+        public void sortByGPA()
+        {
+            studentList.Sort(delegate(Student student, Student student1)
+            { 
+                int compareGPA = student.Gpa.CompareTo(student1.Gpa);
+                if (compareGPA == 0)
+                {
+                    return student.Id.CompareTo(student1.Id);
+                }
+
+                return compareGPA;
+            });
         }
     }
     
